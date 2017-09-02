@@ -59,6 +59,9 @@ public class VigemereCipher {
     
     static String Decipher(String str,String key){
         
+        //change it as doesn't pass whole updated key pass 
+        //noly key,,then for logic use text from currently deciphered text
+        
         String str2="";
         for (int i = 0; i < str.length(); i++) {
             if(str.charAt(i)==' ')
