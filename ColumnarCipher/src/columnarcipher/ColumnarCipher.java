@@ -49,53 +49,30 @@ public class ColumnarCipher {
         list.add(keySort);
         
         for (int i = 0; i < keySort.length; i++) {
-            int minIndex=getMinIndex(keySort);
+            int minIndex=getMinIndex(list);
             for (int j = 0; j < rows; j++) {
                 encText+=temp[j][minIndex];
             }
-            keySort=(int[]) list.remove(minIndex);
+            list.remove(minIndex);
             
         }
         
-        keySort=sortKeys(keySort);
-        
-        
-        for (int i = 0; i < keySort.length; i++) {
-            System.out.println(keySort[i]);
-        }
+        System.out.println(encText);
         
     }
     
-    private static int getMinIndex(int[] keySort){
+    private static int getMinIndex(ArrayList keySort){
         
-        int min=keySort[0];int minIndex=0;
-        for (int i = 0; i < keySort.length; i++) {
-            if(keySort[i]<=min){
+        int min=(int)keySort.get(0);int minIndex=0;
+        for (int i = 0; i < keySort.size(); i++) {
+            if((int)keySort.get(i)<=min){
                 minIndex=i;
-                min=keySort[i];
+                min=(int)keySort.get(i);
             }
         }
         
         return minIndex;
     }
 
-    private static int[] sortKeys(int[] keySort) {
-        int temp=0;
-        for (int i = 0; i < keySort.length; i++) {
-            for (int j = 0; j < keySort.length; j++) {
-                if(keySort[j]>keySort[i]){
-                    temp=keySort[i];
-                    keySort[i]=keySort[j];
-                    keySort[j]=temp;
-                }
-            }
-        }
-        
-//        for (int i = 0; i < keySort.length; i++) {
-//            keySort[i]=i;
-//        }
-        
-        return keySort;
-    }
     
 }
