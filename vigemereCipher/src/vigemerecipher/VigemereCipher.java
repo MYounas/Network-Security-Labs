@@ -20,9 +20,12 @@ public class VigemereCipher {
         // TODO code application logic here
         
         Scanner in=new Scanner(System.in);
+        System.out.print("P.T:");
         String str=in.nextLine().toUpperCase();
+        System.out.print("Key:");
+        String key=in.nextLine().toUpperCase();
         String str2="";
-        String key="MATH";
+//        String key="MATH";
         for (int i = 0,j=0; i < str.length(); i++) {
             if(str.charAt(i)==' '){
                 str2+=" ";
@@ -34,7 +37,8 @@ public class VigemereCipher {
         }
         
         String str3=Encipher(str,str2);
-        System.out.println("Encipher :"+str2);
+//        System.out.println("Encipher :"+str2);
+        System.out.println("Encipher :"+str3);
         System.out.println("Decipher :"+Decipher(str3,str2));
         
     }

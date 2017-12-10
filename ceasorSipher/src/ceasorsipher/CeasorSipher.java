@@ -19,8 +19,10 @@ public class CeasorSipher {
     public static void main(String[] args) {
         // TODO code application logic here
         Scanner in=new Scanner(System.in);
+        System.out.print("P.T:");
         String str=in.nextLine().toUpperCase();
-        int key=5;
+        System.out.print("Key:");
+        int key=in.nextInt();
         String str2=Encipher(str,key);
         System.out.println("Encipher :"+str2);
         System.out.println("Decipher :"+Decipher(str2,key));

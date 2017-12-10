@@ -15,8 +15,8 @@ class Main:
            "11": {"00": "10", "01": "01", "10": "00", "11": "11"}}
 
     def main(self):
-        self.key = str(input("Key:"))
         self.PT = str(input("P.T:"))
+        self.key = str(input("Key:"))
 
         self.key1, self.key2 = self.keyMethod(self.key)
 
@@ -58,7 +58,7 @@ class Main:
         for i in range(len(Main._IP_1)):
             self.PTD+=temp[Main._IP_1[i]-1]
 
-        print(self.key1, self.key2, self.CT, self.PTD)
+        print("Key 1:"+self.key1, "Key 2:"+self.key2, "CT :"+self.CT, self.PTD)
 
     def keyMethod(self, key):
         key1 = key2 = temp = ""
